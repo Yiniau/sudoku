@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a50fa057-b3f3-48ed-a4c8-796bbfa6900f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/FiraSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameboard.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameboard_controller.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameboard_view.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameboard.rs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gameboard.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameboard.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="180">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
                 <element signature="e#495#855#0" />
                 <element signature="e#933#934#0" expanded="true" />
@@ -62,6 +54,15 @@
                 <element signature="n#!!block;n#arr_repeat_check#0" />
                 <element signature="n#tests#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -86,6 +87,7 @@
         <option value="$PROJECT_DIR$/src/gameboard_view.rs" />
         <option value="$PROJECT_DIR$/src/main.rs" />
         <option value="$PROJECT_DIR$/src/gameboard.rs" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -237,12 +239,12 @@
       <workItem from="1519626158798" duration="17811000" />
       <workItem from="1519822280428" duration="14553000" />
       <workItem from="1520173521678" duration="15341000" />
-      <workItem from="1520262050173" duration="261000" />
+      <workItem from="1520262050173" duration="898000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56078000" />
+    <option name="totallyTimeSpent" value="56715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="113" y="23" width="1567" height="1027" extended-state="0" />
@@ -548,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="180">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="e#495#855#0" />
             <element signature="e#933#934#0" expanded="true" />
@@ -559,6 +561,16 @@
             <element signature="n#!!block;n#arr_repeat_check#0" />
             <element signature="n#tests#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cargo.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
         </state>
       </provider>
     </entry>
