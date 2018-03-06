@@ -41,81 +41,102 @@ impl Gameboard {
         self.cells[ind[1]][ind[0]] = val;
     }
 
-    /// Generate start number
+    /// Generate start matrix
     pub fn question_generate(&mut self) {
-        // TODO: generate the sudoku question data randomly
-        let mut matrix = vec![vec![0; 9]; 9];
+        generate_sudoku_matrix(self);
+        dig_holes(self);
+    }
+}
 
-        let mut y = 0;
-        let mut x = 0;
-        let mut c_g = 0; // 回退次数计数
-        loop {
-            if y >= 9 {
-                break;
-            }
-            if c_g >= 10 { // 回退次数过多时释放整个 row
-                {
-                    let m = &mut matrix[y];
-                    m.into_iter()
-                        .for_each(|x| {
-                            *x = 0;
-                        });
-                    y -= 1;
-                    c_g = 0;
+/// Dig holes randomly in the matrix
+fn dig_holes(gameboard: &mut Gameboard) {
+    for i in 0..9 {
+        let y_p = match i / 3 {
+            0 => 0..3,
+            1 => 3..6,
+            2 => 6..9,
+            _ => 0..3,
+        };
+        let x_p = match i % 3 {
+            0 => 0..3,
+            1 => 3..6,
+            2 => 6..9,
+            _ => 0..3,
+        };
+        for y in y_p {
+            x_p.clone().for_each(|x| {
+                if random_num(1, 10) > 7 {
+                    gameboard.set([y, x], 0);
                 }
-                {
-                    let m = &mut matrix[y];
-                    m.into_iter()
-                        .for_each(|x| {
-                            *x = 0;
-                        });
-                    x = 0;
-                }
-            }
-
-            matrix[y][x] = random_num(1, 9);
-
-            let mut c = 0; // 计数器
-
-            while !matrix_check(&matrix) {
-                c += 1;
-                matrix[y][x] = random_num(1, 9);
-                if c >= 20 {
-                    c_g += 1;
-                    matrix[y][x] = 0;
-                    if x == 0 && y > 0 { // matrix 换行
-                        y -= 1;
-                        x = 8;
-                    } else if x > 0 {
-                        x -= 1;
-                    }
-                    c = 0;
-                }
-            }
-            x += 1;
-            if x >= 9 { // matrix 换行
-                y += 1;
-                x = 0;
-            }
-            println!("{:?}", &matrix);
-        }
-
-        for y in 0..9 {
-            for x in 0..9 {
-                self.set([x, y], matrix[y][x] as u8);
-            }
+            });
         }
     }
 }
 
-///// Randomly extract one item in Vec array
-//fn random_extract<T>(arr: &mut Vec<T>) -> T {
-//    use rand;
-//    let random_num = rand::random::<usize>();
-//    let length = arr.len();
-//    if length <= 0 { panic!("vec index over length") };
-//    arr.swap_remove(random_num % length)
-//}
+/// Generate sudoku matrix
+fn generate_sudoku_matrix(gameboard: &mut Gameboard) {
+    let mut matrix = vec![vec![0; 9]; 9];
+
+    let mut y = 0;
+    let mut x = 0;
+    let mut c_g = 0; // 回退次数计数
+    loop {
+        if y >= 9 {
+            break;
+        }
+        if c_g >= 10 { // 回退次数过多时释放整个 row
+            {
+                let m = &mut matrix[y];
+                m.into_iter()
+                    .for_each(|x| {
+                        *x = 0;
+                    });
+                y -= 1;
+                c_g = 0;
+            }
+            {
+                let m = &mut matrix[y];
+                m.into_iter()
+                    .for_each(|x| {
+                        *x = 0;
+                    });
+                x = 0;
+            }
+        }
+
+        matrix[y][x] = random_num(1, 9);
+
+        let mut c = 0; // 计数器
+
+        while !matrix_check(&matrix) {
+            c += 1;
+            matrix[y][x] = random_num(1, 9);
+            if c >= 20 {
+                c_g += 1;
+                matrix[y][x] = 0;
+                if x == 0 && y > 0 { // matrix 换行
+                    y -= 1;
+                    x = 8;
+                } else if x > 0 {
+                    x -= 1;
+                }
+                c = 0;
+            }
+        }
+        x += 1;
+        if x >= 9 { // matrix 换行
+            y += 1;
+            x = 0;
+        }
+        println!("{:?}", &matrix);
+    }
+
+    for y in 0..9 {
+        for x in 0..9 {
+            gameboard.set([x, y], matrix[y][x] as u8);
+        }
+    }
+}
 
 /// Return a random usize number with given bound
 /// e.g. s = 1, e = 5, return 1~5 usize
