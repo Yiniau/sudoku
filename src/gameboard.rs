@@ -65,7 +65,7 @@ fn dig_holes(gameboard: &mut Gameboard) {
         };
         for y in y_p {
             x_p.clone().for_each(|x| {
-                if random_num(1, 10) > 7 {
+                if random_num(1, 10) > 6 {
                     gameboard.set([y, x], 0);
                 }
             });
