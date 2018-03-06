@@ -5,16 +5,16 @@
 extern crate piston;
 extern crate graphics;
 extern crate opengl_graphics;
-//extern crate sdl2_window;
+extern crate sdl2_window;
 extern crate rand;
-extern crate glutin_window;
+// extern crate glutin_window;
 
 use piston::window::WindowSettings;
 use piston::event_loop::{Events, EventLoop, EventSettings};
 use piston::input::RenderEvent;
 use opengl_graphics::{GlGraphics, OpenGL, GlyphCache, Filter, TextureSettings};
-//use sdl2_window::Sdl2Window;
-use glutin_window::GlutinWindow;
+use sdl2_window::Sdl2Window;
+// use glutin_window::GlutinWindow;
 
 pub use gameboard::Gameboard;
 pub use gameboard_controller::GameboardController;
@@ -29,8 +29,7 @@ fn main() {
     let settings = WindowSettings::new("sudoku", (512, 512))
         .opengl(opengl)
         .exit_on_esc(true);
-//    let mut window: Sdl2Window = settings.build()
-    let mut window: GlutinWindow = settings.build()
+    let mut window: Sdl2Window = settings.build()
         .expect("build GlutinWindow failed");
 
     let mut events = Events::new(EventSettings::new().lazy(true));
