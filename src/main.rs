@@ -13,8 +13,8 @@ use piston::window::WindowSettings;
 use piston::event_loop::{Events, EventLoop, EventSettings};
 use piston::input::RenderEvent;
 use opengl_graphics::{GlGraphics, OpenGL, GlyphCache, Filter, TextureSettings};
-//use sdl2_window::Sdl2Window as Window;
-use glutin_window::GlutinWindow as Window;
+use sdl2_window::Sdl2Window as Window;
+// use glutin_window::GlutinWindow as Window;
 
 pub use gameboard::Gameboard;
 pub use gameboard_controller::GameboardController;
