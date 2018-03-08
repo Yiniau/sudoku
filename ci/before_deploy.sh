@@ -21,7 +21,7 @@ main() {
     cross rustc --bin sudoku --target $TARGET --release -- -C lto
 
     # TODO Update this to package the right artifacts
-    case $TRAVIS_OS_NAME in
+    case $TARGET in
       windows)
         cp target/$TARGET/release/sudoku.exe $stage/
         ;;
