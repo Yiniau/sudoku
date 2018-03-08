@@ -22,7 +22,7 @@ main() {
 
     # TODO Update this to package the right artifacts
     cp target/$TARGET/release/sudoku $stage/
-    cp assets/FiraSans-Regular.ttf $stage/assets/
+    test -d $stage/assets || mkdir -p $stage/assets && cp assets/FiraSans-Regular.ttf $stage/assets
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *

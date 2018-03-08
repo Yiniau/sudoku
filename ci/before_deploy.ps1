@@ -6,13 +6,14 @@ $STAGE = [System.Guid]::NewGuid().ToString()
 
 Set-Location $ENV:Temp
 New-Item -Type Directory -Name $STAGE
+New-Item -Type Directory -Name $STAGE\assets
 Set-Location $STAGE
 
 $ZIP = "$SRC_DIR\$($Env:CRATE_NAME)-$($Env:APPVEYOR_REPO_TAG_NAME)-$($Env:TARGET).zip"
 
 # TODO Update this to package the right artifacts
 Copy-Item "$SRC_DIR\target\$($Env:TARGET)\release\sudoku.exe" '.\'
-Copy-Item "$SRC_DIR\..\assets\FiraSans-Regular.ttf" '.\assets'
+Copy-Item "$SRC_DIR\..\assets\FiraSans-Regular.ttf" '.\assets\'
 
 7z a "$ZIP" *
 
