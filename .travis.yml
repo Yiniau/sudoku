@@ -110,7 +110,7 @@ deploy:
     secure: Ci4M8oPS5P5gsfA0ni9BKx7Ptwzn2xDEXIxCzuyoVctbYIxkA8W7vDq6uemTosvp6kGxi1Ge7aQ+LeNZFHtfXSOLpwfNYlfzqLunMNn63jDvRxg6cdbLbZHFFu+W9cSnhxPfSQa1PHQqvNQa56qPvS2Fw7l2K+ABQv/oBLAz9hChnhHXQJrlQEmhgip+AiWsfWh7xdE4Egntkz6h+/cxOS9vCnmshZApEhibz+FkQb42kiYeY/lSAUyOt3V2ElL34tP0ZqCymvI11RodoYXTCA/mrJueKfLlty11x5VKlha0JlhUf5hBsw9btgeB/sMSASguNLiK+vScSm+zXuXuMD3W3uWEDEDVBNO1nUTDQb3GlmOhaiaoIruHN3AlI5dVo29BG/RM0xRaV0INXdpFKRsb2md++e+5P30nDOdDMGXONqqRx+hM4g5Fvrl6V6NzXltPAXZRBlR8EG3QHDEwnztNMONJKtFiBWLWW1o7qbbUmh9ck+vPcKtgeO1fY+mFx7izLCCU/McvaGcUY3kg5nJck1FuzE0A9qMfrNJxow1wqYIPNm0RkXVyp77iPIZcArA3sJ2/WUi1h1bZr0U607oS0//2QRxRlnG14pBDEb2cDBFmOdmNX4WcL+BXOFY1WWKMr55lDrnc+1Z2J7Y2gy1oNDhWevqY31d/dWMSb/Y=
   file_glob: true
   file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
-  draft: true
+  prerelease: true
   on:
     # TODO Here you can pick which targets will generate binary releases
     # In this example, there are some targets that are tested using the stable
