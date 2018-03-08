@@ -21,7 +21,17 @@ main() {
     cross rustc --bin sudoku --target $TARGET --release -- -C lto
 
     # TODO Update this to package the right artifacts
-    cp target/$TARGET/release/sudoku $stage/
+    case $TRAVIS_OS_NAME in
+      windows)
+        cp target/$TARGET/release/sudoku.exe $stage/
+        ;;
+      linux)
+        cp target/$TARGET/release/sudoku $stage/
+        ;;
+      osx)
+        cp target/$TARGET/release/sudoku $stage/
+        ;;
+    esac
     test -d $stage/assets || mkdir -p $stage/assets && cp assets/FiraSans-Regular.ttf $stage/assets
 
     cd $stage
