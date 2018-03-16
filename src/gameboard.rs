@@ -203,7 +203,7 @@ fn matrix_check(m: &Vec<Vec<usize>>) -> bool {
             }
         }
     }
-    return true;
+    true
 }
 
 /// Check if there is is any duplication in given array
