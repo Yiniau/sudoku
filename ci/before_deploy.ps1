@@ -13,9 +13,9 @@ $ZIP = "$SRC_DIR\$($Env:CRATE_NAME)-$($Env:APPVEYOR_REPO_TAG_NAME)-$($Env:TARGET
 
 # TODO Update this to package the right artifacts
 Copy-Item "$SRC_DIR\target\$($Env:TARGET)\release\sudoku.exe" '.\'
-Copy-Item "$SRC_DIR\..\assets\FiraSans-Regular.ttf" '.\assets\'
+Copy-Item "$SRC_DIR\assets\FiraSans-Regular.ttf" '.\assets\'
 
-7z a "$ZIP" '.\'
+7z a "$ZIP" *
 
 Push-AppveyorArtifact "$ZIP"
 
