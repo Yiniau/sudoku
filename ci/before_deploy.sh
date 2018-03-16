@@ -31,7 +31,7 @@ main() {
       *linux*)
         cp target/$TARGET/release/sudoku $stage/
         ;;
-      *osx*)
+      *apple*)
         cp target/$TARGET/release/sudoku $stage/
         ;;
     esac
